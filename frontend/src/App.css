@@ -1,0 +1,26 @@
+.chart-grid {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+.chart-card {
+  background-color: white;
+  padding: 1rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  flex: 1 1 48%;
+  min-width: 300px;
+}
+
+.center-table {
+  display: flex;
+  justify-content: center;
+}
+
+.table-container {
+  width: 100%;
+  max-width: 960px;
+}

@@ -1,0 +1,58 @@
+# 忽略虚拟环境
+backend/.venv/
+
+# 忽略模型权重
+backend/classifier_trained/model.safetensors
+
+# 忽略系统和编辑器临时文件
+.DS_Store
+node_modules
+
+# === Python ===
+__pycache__/
+*.py[cod]
+*.egg
+*.egg-info/
+dist/
+build/
+env/
+venv/
+.venv/
+*.log
+*.sqlite3
+
+# === FastAPI / Uvicorn ===
+instance/
+.env
+*.db
+
+# === macOS ===
+.DS_Store
+
+# === VSCode ===
+.vscode/
+
+# === Node.js / React Frontend ===
+node_modules/
+build/
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# === Model Outputs ===
+outputs/
+uploaded*.mp4
+*.wav
+*.json
+*.tmp
+*.ckpt
+
+# === Gradio Cache ===
+gradio_cached_examples/
+
+# === Python Notebooks (optional) ===
+.ipynb_checkpoints/
+
+# === HuggingFace Cache ===
+~/.cache/huggingface
