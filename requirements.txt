@@ -1,31 +1,38 @@
-fastapi
-uvicorn
+# FastAPI Web Server
+fastapi>=0.100.0
+uvicorn>=0.22.0
 python-multipart
 aiofiles
 
-transformers
-torch
+# AI & NLP Models
+transformers>=4.35.0
+torch>=2.0.0
 sentencepiece
-nltk
-whisper
+nltk>=3.8.1
+
+# Whisper (for transcription)
 openai-whisper
 
+# Audio / Video Processing
 moviepy
 pydub
 ffmpeg-python
 
+# OCR
 easyocr
 opencv-python
 
+# Google Cloud AI Platform
 google-api-python-client
 google-auth
 google-auth-oauthlib
 google-cloud-aiplatform
 
+# Utils
 requests
-shutil
 pillow
 tqdm
-
-gradio
 python-dotenv
+
+# Optional (UI or testing)
+gradio
