@@ -82,7 +82,7 @@ nltk.download('punkt')
 nltk.download('punkt_tab')  # 👈 就是这个
 
 # Google Cloud Service Account 配置
-SERVICE_ACCOUNT_FILE = "thermal-origin-454105-s5-c6291f413f44.json"
+SERVICE_ACCOUNT_FILE = "thermal-origin-454105-s5-b67d84040ac1.json"
 SCOPES = ["https://www.googleapis.com/auth/cloud-platform"]
 
 credentials = service_account.Credentials.from_service_account_file(
@@ -178,8 +178,14 @@ async def analyze_text(text):
 
 # === HuggingFace Text Classification Setup ===
 # 加载 fine-tuned 模型和 tokenizer（只需加载一次）
-classification_model= XLMRobertaForSequenceClassification.from_pretrained("momoali23/finetuned-xlm-r-tweeteval-hate")
-tokenizer = XLMRobertaTokenizer.from_pretrained("momoali23/finetuned-xlm-r-tweeteval-hate")
+classification_model= XLMRobertaForSequenceClassification.from_pretrained("momoali23/finetuned-xlm-esaf-v4")
+tokenizer = XLMRobertaTokenizer.from_pretrained("momoali23/finetuned-xlm-esaf-v4")
+
+# ✅ 提前设置标签映射
+classification_model.config.id2label = {
+    0: "✅ Normal",
+    1: "🚨 Hate Speech"
+}
 
 @app.post("/analyze/fine-tuned")
 async def analyze_custom_model(request: FastAPIRequest):
@@ -192,14 +198,20 @@ async def analyze_custom_model(request: FastAPIRequest):
         prediction = torch.argmax(outputs.logits, dim=1).item()
         score = torch.softmax(outputs.logits, dim=1).max().item()
 
-    label_map = {
-        0: "✅ Normal",
-        1: "🚨 Hate Speech"
-    }
+    print("📨 Input Text:", text)
+    print("📊 Raw Logits:", outputs.logits)
+    print("🎯 Prediction Index:", prediction)
+    print("✅ Score:", score)
+
+    label_map = classification_model.config.id2label
+
 
     return {
-        "label": label_map[prediction],
+            "label": label_map.get(prediction, "Unknown"),
+            "score": round(score, 3)
     }
+
+    
 
 # === HuggingFace Video Setup ===
 model_path = "./classifier_trained"  # 本地路径，确保文件夹存在
