@@ -79,7 +79,7 @@ app.add_middleware(
 
 
 nltk.download('punkt')
-nltk.download('punkt_tab')  # 👈 就是这个
+nltk.download('punkt_tab')  # 👈 
 
 # Google Cloud Service Account 配置
 SERVICE_ACCOUNT_FILE = "thermal-origin-454105-s5-b67d84040ac1.json"
