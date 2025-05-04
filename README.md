@@ -18,7 +18,7 @@ This project is a lightweight and modular content analysis tool that allows user
 
 ### 📽️ Quick Demo (click to watch)
 
-[![Watch the demo](ProductDemo.png)](ProductDemo.Mp4)
+[![Watch the demo](ProductDemo.png)](ProductDemo.mp4)
 
 ---
 
