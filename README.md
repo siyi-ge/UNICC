@@ -16,6 +16,10 @@ This project is a lightweight and modular content analysis tool that allows user
 - **Audio/Video Support**: Automatically transcribes audio and video with Whisper before analysis
 - **Responsive Frontend**: Built with React and Chart.js for clean, clear visualization
 
+### 📽️ Quick Demo (click to watch)
+
+[![Watch the demo](UNICC/Product Demo.png)](UNICC/Product Demo.mp4)
+
 ---
 
 ## 🛠️ Tech Stack
