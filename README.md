@@ -18,7 +18,7 @@ This project is a lightweight and modular content analysis tool that allows user
 
 ### 📽️ Quick Demo (click to watch)
 
-[![Watch the demo](ProductDemo.png)](ProductDemo.mp4)
+[![Watch the demo](ProductDemo.png)](https://raw.githubusercontent.com/siyi-ge/UNICC/main/UNICC/ProductDemo.mp4)
 
 ---
 
