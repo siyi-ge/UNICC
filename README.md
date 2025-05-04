@@ -22,7 +22,7 @@ This project is a lightweight and modular content analysis tool that allows user
 <video src="https://raw.githubusercontent.com/siyi-ge/UNICC/main/UNICC/ProductDemo.mp4"
        controls
        width="640">
-  Your browser doesn’t support HTML5 video.  
+  Your browser doesn’t support HTML5 video.
   <a href="https://raw.githubusercontent.com/siyi-ge/UNICC/main/UNICC/ProductDemo.mp4">Download the demo</a>.
 </video>
 
